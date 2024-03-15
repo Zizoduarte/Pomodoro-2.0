@@ -1,0 +1,140 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --text-timer-color: #323238;
+  --bg-color: #868686;
+  --secondary-color: #9D9D9D;
+}
+
+.Rain{
+  --primary-color: #02799D;
+  --text-color: #ffffff
+}
+
+.Tree{
+  --primary-color: #029D5C;
+  --text-color: #ffffff;
+}
+
+.Coffee{
+  --primary-color: #9D5F02;
+  --text-color: #ffffff;
+}
+
+.Fire{
+  --primary-color: #FF9900;
+  --text-color: #ffffff;
+}
+
+html.Rain #modes .ph-cloud-rain,
+html.Tree #modes .ph-tree-evergreen,
+html.Fire #modes .ph-fire,
+html.Coffee #modes .ph-storefront{
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+html.running .ph-play-circle,
+html:not(.running) .ph-pause-circle{
+  display: none;
+}
+
+.flex{
+  display: flex;
+}
+
+body{
+  font-family: sans-serif;
+  color: var(--text-timer-color);
+  
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--bg-color);
+}
+
+main{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 21rem;
+  gap: 12rem;
+}
+
+#timer{
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+#temporizador{
+  font-size: clamp(5rem, 4rem + 4vw, 7.886rem);
+  line-height: 9.25rem;
+  font-weight: bold;
+}
+
+#controls{
+  gap: 2.5rem;
+}
+
+#controls button{
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+}
+
+#modes{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 2rem;
+}
+
+#modes button{
+  width: 8.625rem;
+  height: 9.5rem;
+
+  font-size: 3.5rem;
+
+  border: none;
+  border-radius: 1.5rem;
+  background-color: var(--secondary-color);
+}
+
+button{
+  cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  main{
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0;
+  }
+
+  #timer{
+      gap: 0;
+  }
+  
+  #temporizador{
+      line-height: 7.063rem;
+  }
+
+  #controls{
+      gap: 1.5rem;
+  }
+
+  #modes{
+      margin-top: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.125rem;
+  }
+
+  #modes button{
+      width: 4rem;
+      height: 4rem;
+
+      font-size: 1.5rem;
+  }
+}
